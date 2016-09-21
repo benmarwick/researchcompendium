@@ -66,6 +66,21 @@ Version: 1.17.1
 Hash: 97cb6f6293cd18d17df77a6383cc6763
 Requires: bitops
 
+Package: covr
+Source: github
+Version: 2.2.1
+Hash: 60925a7fb1b010bf269dbf2955df9642
+Requires: crayon, httr, jsonlite, memoise, rex, withr
+GithubRepo: covr
+GithubUsername: jimhester
+GithubRef: master
+GithubSha1: ba4d6defd53515a12d04da7a27e56fcb85158cd8
+
+Package: crayon
+Source: CRAN
+Version: 1.3.2
+Hash: 576a9d297a567d6a5ebd164ca5221590
+
 Package: curl
 Source: CRAN
 Version: 1.2
@@ -184,6 +199,17 @@ GithubUsername: rstudio
 GithubRef: master
 GithubSha1: f59b9b210a39b85826384c05c0ce2a394e8d998a
 
+Package: praise
+Source: CRAN
+Version: 1.0.0
+Hash: 77da8f1df873a4b91e5c4a68fe2fb1b6
+
+Package: rex
+Source: CRAN
+Version: 1.1.1
+Hash: 69e208c6283398d235e507a658ba8079
+Requires: lazyeval, magrittr
+
 Package: rmarkdown
 Source: github
 Version: 1.0.9013
@@ -228,6 +254,11 @@ Source: CRAN
 Version: 1.1.0
 Hash: 4d21d0063b37a17ea18eaec6acd29bf3
 Requires: magrittr, stringi
+
+Package: testthat
+Source: CRAN
+Version: 1.0.2
+Requires: R6, crayon, digest, magrittr, praise
 
 Package: tibble
 Source: CRAN
