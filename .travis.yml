@@ -8,3 +8,6 @@ cache:
 install:
   - R -e "0" --args --bootstrap-packrat
 warnings_are_errors: false
+
+after_success:
+bash <(curl -s https://codecov.io/bash) -t 9698fc31-0018-4b43-896b-60503df4d0e0
