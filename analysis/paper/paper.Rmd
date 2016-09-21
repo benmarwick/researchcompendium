@@ -2,7 +2,7 @@
 title: ''
 author:
 - Ben Marwick
-- 
+- Maria Schaarschmidt
 date: '`r Sys.Date()`'
 output:
    bookdown::word_document2:
