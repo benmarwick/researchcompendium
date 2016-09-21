@@ -14,12 +14,11 @@ knitr::opts_chunk$set(
 )
 ```
 [![Last-changedate](https://img.shields.io/badge/last%20change-`r gsub('-', '--', Sys.Date())`-brightgreen.svg)](https://github.com/benmarwick/researchcompendium/commits/master) 
-[![minimal R version](https://img.shields.io/badge/R%3E%3D-`r paste0(sessionInfo()$R.version$major, ".", sessionInfo()$R.version$minor)`-brightgreen.svg)](https://cran.r-project.org/)
+[![minimal R version](https://img.shields.io/badge/R%3E%3D-`r as.character(getRversion())`-brightgreen.svg)](https://cran.r-project.org/)
 [![Licence](https://img.shields.io/github/license/mashape/apistatus.svg)](http://choosealicense.com/licenses/mit/) 
 [![Travis-CI Build Status](https://travis-ci.org/benmarwick/researchcompendium.png?branch=master)](https://travis-ci.org/benmarwick/researchcompendium) 
 [![Circle CI](https://circleci.com/gh/benmarwick/researchcompendium.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/benmarwick/researchcompendium)
 [![codecov.io](https://codecov.io/github/benmarwick/researchcompendium/coverage.svg?branch=master)](https://codecov.io/github/benmarwick/researchcompendium?branch=master)
-
 
 ## Research compendium for a report on xxx
 
@@ -32,7 +31,6 @@ The files at the URL above will generate the results as found in the publication
 ### Authors  of this repository:
 
 Ben Marwick (benmarwick@gmail.com)
-Maria Schaarschmidt
 
 ### Published in: 
 
@@ -46,10 +44,10 @@ This repository is our research compendium for our analysis of xxxx. The compend
 
 The `analysis/` directory contains:
 
+- the manuscript as submitted (in MS Word format) and it's Rmd source file
 - all the data files (in CSV format, in the `data/` directory)    
-- the manuscript as submitted (in MS Word format)    
-- supplementary information source files (in R markdown format)
-- executed versions of the supplementary files (in HTML format) and all the figures that are included in the paper (in the `figures/` directory)
+- supplementary information source files (in R markdown format) and executed versions
+- all the figures that are included in the paper (in the `figures/` directory)
 
 ### The R package 
 
@@ -58,18 +56,18 @@ This repository is organized as an R package. There are no actual R functions in
 To download the package source as you see it on GitHub, for offline browsing, use this line at the shell prompt (assuming you have Git installed on your computer):
 
 ```{r eval=FALSE}
-git clone https://github.com/benmarwick/testing.git
+git clone https://github.com/benmarwick/researchcompendium.git
 ```
 
-Once the download is complete, open the `testing.Rproj` in RStudio to begin working with the package and compendium files. 
+Once the download is complete, open the `researchcompendium.Rproj` in RStudio to begin working with the package and compendium files. 
 
-The package has a number of dependencies on other R packages, and programs outside of R. These are listed at the bottom of this README. Installing these can be time-consuming and complicated, so we've done two things to simpify access to the compendium. First is the packrat directory, which contains the source code for all the packages we depend on. If all works well, these will be installed on your computer when you open `testing.Rproj` in RStudio. Second is our Docker image that includes all the necessary software, code and data to run our analysis. The Docker image may give a quicker entry point to the project, and is more self-contained, so might save some fiddling with installing things.   
+The package has a number of dependencies on other R packages, and programs outside of R. These are listed at the bottom of this README. Installing these can be time-consuming and complicated, so we've done two things to simpify access to the compendium. First is the packrat directory, which contains the source code for all the packages we depend on. If all works well, these will be installed on your computer when you open `researchcompendium.Rproj` in RStudio. Second is our Docker image that includes all the necessary software, code and data to run our analysis. The Docker image may give a quicker entry point to the project, and is more self-contained, so might save some fiddling with installing things.   
 
 ### The Docker image 
 
 A Docker image is a lightweight GNU/Linux virtual computer that can be run as a piece of software on Windows and OSX (and other Linux systems). To capture the complete computational environment used for this project we have a Dockerfile that specifies how to make the Docker image that we developed this project in. The Docker image includes all of the software dependencies needed to run the code in this project, as well as the R package and other compendium files. To launch the Docker image for this project, first, [install Docker](https://docs.docker.com/installation/) on your computer. At the Docker prompt, enter:
 
-    docker run -dp 8787:8787 benmarwick/testing
+    docker run -dp 8787:8787 benmarwick/researchcompendium
 
 This will start a server instance of RStudio. Then open your web browser at localhost:8787 or or run `docker-machine ip default` in the shell to find the correct IP address, and log in with rstudio/rstudio.
 
@@ -77,18 +75,19 @@ Once logged in, use the Files pane (bottom right) to navigate to `/` (the root d
  
 We developed and tested the package on this Docker container, so this is the only platform that We're confident it works on, and so recommend to anyone wanting to use this package to generate the vignette, etc. 
 
-### Licenses:
+### Licenses
 
-Manuscript:  CC-BY-4.0 http://creativecommons.org/licenses/by/4.0/
+Manuscript:  [CC-BY-4.0](http://creativecommons.org/licenses/by/4.0/)
 
-Code: MIT http://opensource.org/licenses/MIT year: 2016, copyright holder: Ben Marwick
+Code: [MIT](http://opensource.org/licenses/MIT) year: `r format(Sys.Date(), "%Y")`, copyright holder: Ben Marwick
 
-Data: CC0 http://creativecommons.org/publicdomain/zero/1.0/ attribution requested in reuse
+Data: [CC-0](http://creativecommons.org/publicdomain/zero/1.0/) attribution requested in reuse
 
-### Dependencies:
+### Dependencies
 
-I used [RStudio](http://www.rstudio.com/products/rstudio/) (version 0.99.845) on Ubuntu 16.04 and Windows 7. See the colophon section of the docx file in `analysis/paper` for a full list of the packages that this project depends on. 
-### Contact: 
+I used [RStudio](http://www.rstudio.com/products/rstudio/) on Ubuntu 16.04 and Windows 7. See the colophon section of the docx file in `analysis/paper` for a full list of the packages that this project depends on. 
+
+### Contact
 
 Ben Marwick, Associate Professor, Department of Anthropology
 Denny Hall 117, Box 353100, University of Washington
