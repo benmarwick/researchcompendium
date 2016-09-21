@@ -23,9 +23,10 @@ http://dx.doi.org/xxxxxxx
 
 The files at the URL above will generate the results as found in the publication. The files hosted at github.com are the development versions and may have changed since the report was published
 
-### Author of this repository:
+### Authors  of this repository:
 
 Ben Marwick (benmarwick@gmail.com)
+Maria Schaarschmidt
 
 ### Published in: 
 
