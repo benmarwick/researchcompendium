@@ -13,11 +13,11 @@ knitr::opts_chunk$set(
   fig.path = "README-"
 )
 ```
-[![Last-changedate](https://img.shields.io/badge/last%20change-`r gsub('-', '--', Sys.Date())`-brightgreen.svg)](https://github.com/benmarwick/testing/commits/master) 
+[![Last-changedate](https://img.shields.io/badge/last%20change-`r gsub('-', '--', Sys.Date())`-brightgreen.svg)](https://github.com/benmarwick/researchcompendium/commits/master) 
 [![minimal R version](https://img.shields.io/badge/R%3E%3D-`r paste0(sessionInfo()$R.version$major, ".", sessionInfo()$R.version$minor)`-brightgreen.svg)](https://cran.r-project.org/)
 [![Licence](https://img.shields.io/github/license/mashape/apistatus.svg)](http://choosealicense.com/licenses/mit/) 
-[![Travis-CI Build Status](https://travis-ci.org/benmarwick/testing.png?branch=master)](https://travis-ci.org/benmarwick/testing) 
-[![codecov.io](https://codecov.io/github/benmarwick/testing/coverage.svg?branch=master)](https://codecov.io/github/benmarwick/testing?branch=master)
+[![Travis-CI Build Status](https://travis-ci.org/benmarwick/researchcompendium.png?branch=master)](https://travis-ci.org/benmarwick/researchcompendium) 
+[![codecov.io](https://codecov.io/github/benmarwick/researchcompendium/coverage.svg?branch=master)](https://codecov.io/github/benmarwick/researchcompendium?branch=master)
 
 ## Research compendium for a report on xxx
 
@@ -25,7 +25,7 @@ knitr::opts_chunk$set(
  
 http://dx.doi.org/xxxxxxx
 
-The files at the URL above will generate the results as found in the publication. The files hosted at github.com are the development versions and may have changed since the report was published
+The files at the URL above will generate the results as found in the publication. The files hosted at github.com/benmarwick/researchcompendium are the development versions and may have changed since the report was published
 
 ### Authors  of this repository:
 
