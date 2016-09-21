@@ -1,4 +1,4 @@
 library(testthat)
-library(testing)
+library(researchcompendium)
 
 test_check("researchcompendium")
