@@ -1,0 +1,18 @@
+PackratFormat: 1.4
+PackratVersion: 0.4.8.2
+RVersion: 3.3.1
+Repos: BioCsoft=https://bioconductor.org/packages/3.3/bioc,
+    BioCann=https://bioconductor.org/packages/3.3/data/annotation,
+    BioCexp=https://bioconductor.org/packages/3.3/data/experiment,
+    BioCextra=https://bioconductor.org/packages/3.3/extra,
+    CRAN=https://cran.rstudio.com/,
+    CRANextra=https://www.stats.ox.ac.uk/pub/RWin
+
+Package: packrat
+Source: github
+Version: 0.4.8-2
+GithubRepo: packrat
+GithubUsername: rstudio
+GithubRef: master
+GithubSha1: f59b9b210a39b85826384c05c0ce2a394e8d998a
+Hash: 53507860fa914193d3b5f5a7dbe375df
