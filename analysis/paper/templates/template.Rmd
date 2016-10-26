@@ -14,9 +14,25 @@ knitr::opts_chunk$set(echo = FALSE)
 
 # Heading 1
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+This is a template Rmd for rendering a MS Word document with custom styles, including
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+- line numbers for      
+- Headings are bold, underline, nothing.   
+- Arial Narrow 10pt for tables
+- page breaks with style 'Heading 5'
+
+
+Now knit this doc, and edit to update the styles in the resulting docx file. Then rename as 'template' and use this in the yml of the main Rmd:
+
+```
+output:
+  word_document:
+    reference_docx: templates/template.docx
+```
+
+
+
+See here for more information: http://rmarkdown.rstudio.com/articles_docx.html
 
 ```{r cars}
 summary(cars)
@@ -35,19 +51,6 @@ plot(pressure)
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
 #### Heading 4
-s
-Now knit this doc, and edit the styles in the resulting docx file. Then rename as 'template' and use this in the yml:
-
-```
-output:
-  word_document:
-    reference_docx: templates/template.docx
-```
-
-Don't forget:
-- line numbers for JAS!     
-- Headings are bold, underline, nothing.   
-- Arial Narrow 10pt for tables
 
 
-See here for more information: http://rmarkdown.rstudio.com/articles_docx.html
+
