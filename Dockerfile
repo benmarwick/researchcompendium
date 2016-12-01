@@ -13,7 +13,7 @@ RUN . /etc/environment \
   && R -e "options(repos='https://mran.microsoft.com/snapshot/2016-11-30'); devtools::install('/researchcompendium', dep=TRUE)" \
 
  # render the manuscript into a docx
-  && R -e "rmarkdown::render('/researchcompendium/analysis/paper/paper.rmd')"
+  && R -e "rmarkdown::render('/researchcompendium/analysis/paper/paper.Rmd')"
 
 
 
