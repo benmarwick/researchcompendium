@@ -1,29 +1,49 @@
 # get the base image, this one has R, RStudio and pandoc
-FROM rocker/verse
+FROM rocker/verse:3.3.2
 
 # required
 MAINTAINER Ben Marwick <benmarwick@gmail.com>
 
-# stay current
-RUN apt-get update -y \
+COPY . /researchcompendium
+ # go into the repo directory
+RUN . /etc/environment \
 
-  # solve a mysterious & sudden error with XML pkg
-  && apt-get install libxml2-dev -y \
+  # build this compendium package, get deps from MRAN
+  # set date here manually
+  && R -e "options(repos='https://mran.microsoft.com/snapshot/2016-11-30'); devtools::install('/researchcompendium', dep=TRUE)" \
+
+ # render the manuscript into a docx
+  && R -e "rmarkdown::render('/researchcompendium/analysis/paper/paper.rmd')"
 
 
-  # get the full set of repository files from GitHub
-  && git clone https://github.com/benmarwick/researchcompendium.git \
-  # make these files writable
-  && chmod 777 -R researchcompendium \
-  # go into the repo directory
-  && cd /researchcompendium \
-  # start R and build pkgs that we depend on from
-  # local sources that we have collected with packrat
-  && R -e "0" --args --bootstrap-packrat \
-  # build this compendium package
-  && R -e 'devtools::install(".")' \
-  # render the manuscript into a docx
-  && R -e "rmarkdown::render('analysis/paper/paper.Rmd')"
+
+
+## get the base image, this one has R, RStudio and pandoc
+#FROM rocker/verse
+#
+## required
+#MAINTAINER Ben Marwick <benmarwick@gmail.com>
+#
+## stay current
+#RUN apt-get update -y \
+#
+#  # solve a mysterious & sudden error with XML pkg
+#  && apt-get install libxml2-dev -y \
+#
+#
+#  # get the full set of repository files from GitHub
+#  && git clone https://github.com/benmarwick/researchcompendium.git \
+#  # make these files writable
+#  && chmod 777 -R researchcompendium \
+#  # go into the repo directory
+#  && cd /researchcompendium \
+#  # start R and build pkgs that we depend on from
+#  # local sources that we have collected with packrat
+#  && R -e "0" --args --bootstrap-packrat \
+#  # build this compendium package
+#  && R -e 'devtools::install(".")' \
+#  # render the manuscript into a docx
+#  && R -e "rmarkdown::render('analysis/paper/paper.Rmd')"
 
 
 #################### Notes to self ###############################
