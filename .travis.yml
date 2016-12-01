@@ -2,7 +2,8 @@
 
 sudo: required
 
-language: R
+# don't need to install R
+language: generic
 
 services:
   - docker
@@ -12,7 +13,7 @@ before_install:
   - docker build -t benmarwick/researchcompendium .
 
 # always!
-warnings_are_errors: false
+# warnings_are_errors: false
 
 
 # R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
