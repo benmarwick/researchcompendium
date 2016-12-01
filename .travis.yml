@@ -8,12 +8,8 @@ services:
   - docker
 
 before_install:
+    # create & run container, i.e. compile pkg and render Rmd to Word doc
   - docker build -t benmarwick/researchcompendium .
-  - docker run -d -p  benmarwick/researchcompendium
-  - docker ps -a
-
-
-
 
 
 # R for travis: see documentation at https://docs.travis-ci.com/user/languages/r

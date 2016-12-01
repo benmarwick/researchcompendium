@@ -1,5 +1,5 @@
 # get the base image, this one has R, RStudio and pandoc
-FROM rocker/rstudio
+FROM rocker/verse
 
 # required
 MAINTAINER Ben Marwick <benmarwick@gmail.com>
@@ -17,7 +17,8 @@ RUN apt-get update -y \
   && chmod 777 -R researchcompendium \
   # go into the repo directory
   && cd /researchcompendium \
-  # start R and build pkgs that we depend on from local sources that we have collected with packrat
+  # start R and build pkgs that we depend on from
+  # local sources that we have collected with packrat
   && R -e "0" --args --bootstrap-packrat \
   # build this compendium package
   && R -e 'devtools::install(".")' \
