@@ -5,7 +5,8 @@ machine:
 dependencies:
   override:
     - docker info
-    - docker build -t benmarwick/researchcompendium  https://raw.githubusercontent.com/benmarwick/researchcompendium/master/Dockerfile
+    - docker build -t benmarwick/researchcompendium  .
+
 test:
   override:
       # see if we can start container...
