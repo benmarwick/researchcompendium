@@ -8,9 +8,6 @@ COPY . /researchcompendium
  # go into the repo directory
 RUN . /etc/environment \
 
- && ls -alF \
- && cd researchcompendium && ls -alFR \
-
   # build this compendium package, get deps from MRAN
   # set date here manually
   && R -e "options(repos='https://mran.microsoft.com/snapshot/2016-11-30'); devtools::install('/researchcompendium', dep=TRUE)" \
