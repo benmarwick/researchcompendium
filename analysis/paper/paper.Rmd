@@ -49,6 +49,16 @@ We can have a citation, using a `.bib` file that holds all the details. To get t
 
 All of the usual variations on in-text citation formatting are possible in markdown, and listed for reference here: <http://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html>
 
+### Customising
+
+After cloning this repo, I can replace 'researchcompendium' by the name of the new repo in every file where it occurs with this line in my bash terminal:
+
+```
+find . -type f -exec sed -i 's/foo/bar/g' {} +
+```
+
+I also need to switch on the new repo at <https://travis-ci.com/>, <https://circleci.com/> & <https://hub.docker.com> and enter my details so that circle-ci can push to docker hub
+
 
 ### Colophon
 
