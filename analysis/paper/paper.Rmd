@@ -14,6 +14,8 @@ abstract: |
 ---
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
+project_start_date <- "2017-06-01"
+# checkpoint::checkpoint(snapshotDate = project_start_date, use.knitr = TRUE)
 ```
 
 # Introduction

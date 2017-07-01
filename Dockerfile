@@ -10,7 +10,7 @@ RUN . /etc/environment \
 
   # build this compendium package, get deps from MRAN
   # set date here manually
-  && R -e "options(repos='https://mran.microsoft.com/snapshot/2016-11-30'); devtools::install('/researchcompendium', dep=TRUE)" \
+  && R -e "options(repos='https://mran.microsoft.com/snapshot/2017-07-01'); devtools::install('/researchcompendium', dep=TRUE)" \
 
  # render the manuscript into a docx
   && R -e "rmarkdown::render('/researchcompendium/analysis/paper/paper.Rmd')"
