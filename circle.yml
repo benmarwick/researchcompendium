@@ -10,9 +10,7 @@ dependencies:
 test:
   override:
       # see if we can start container...
-    - docker run --name researchcompendium -d -p 8787:8787 benmarwick/researchcompendium ; sleep 10
-      # make RStudio server run in browser...
-    - curl --retry 10 --retry-delay 5 -v http://localhost:8787
+    - docker run --name researchcompendium -d -p 8787:8787 benmarwick/researchcompendium
 
 deployment:
   hub:
